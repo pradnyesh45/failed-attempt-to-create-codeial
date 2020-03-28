@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 
 const commentSchema = new mongoose.Schema({
-    comment: {
+    content: {
         type: String,
         required: true
     },
-    // comment belong to a user
+    // comment belongs to a user
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
@@ -15,7 +15,7 @@ const commentSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Post'
     }
-}, {
+},{
     timestamps: true
 });
 
