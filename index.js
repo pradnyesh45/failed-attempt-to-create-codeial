@@ -9,7 +9,7 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo')(session);
-const sassMiddleware = require('node-sass-middleware');
+const sassMiddleware =require('node-sass-middleware');
 
 
 app.use(sassMiddleware({
@@ -33,11 +33,11 @@ app.set('layout extractScripts', true);
 
 
 
-// setup the view engine
+// set up the view engine
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
-//  mongo store is used to store the session cookie in the db
+// mongo store is used to store the session cookie in the db
 app.use(session({
     name: 'codeial',
     // TODO change the secret before deployment in production mode
@@ -51,10 +51,10 @@ app.use(session({
         {
             mongooseConnection: db,
             autoRemove: 'disabled'
-
+        
         },
         function(err){
-            console.log(err || 'connect-mongodb setup ok');
+            console.log(err ||  'connect-mongodb setup ok');
         }
     )
 }));
